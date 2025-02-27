@@ -1,0 +1,22 @@
+{
+  "name": "backend-do-cadastro",
+  "version": "1.0.0",
+  "description": "Backend API MVC REST",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "start": "node index.js",
+    "type": "git",
+    "url": "git+https://github.com/victornascimento08/Backend-Do-Cadastro.git"
+  },
+  "author": "Victor Nascimento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victornascimento08/Backend-Do-Cadastro/issues"
+  },
+  "homepage": "https://github.com/victornascimento08/Backend-Do-Cadastro#readme"
+}
