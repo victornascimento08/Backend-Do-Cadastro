@@ -1,3 +1,6 @@
+
+import ClienteDAO from '../Persistences/ClienteDAO.js';
+
 export default class Cliente {
     
     #nome;
@@ -44,22 +47,36 @@ export default class Cliente {
     }
 
     async gravar() {
-        const cliDB = new ClienteDB();
-        cliDB.gravar(this);
+        const dao = new ClienteDAO();
+        await dao.gravar(this);
     }
 
     async alterar() {
-        const cliDB = new ClienteDB();
-        cliDB.alterar(this);
+        const dao = new ClienteDAO();
+        await dao.atualizar(this);
     }
 
     async excluir() {
-        const cliDB = new ClienteDB();
-        cliDB.excluir(this);
+        const dao = new ClienteDAO();
+        await dao.excluir(this);
     }
 
     async consultar() {
-        const cliDB = new ClienteDB();
-        return await cliDB.consultar(this);
+        const dao = new ClienteDAO();
+        return await dao.consultar(this);
+    }
+
+   
+toJSON() {
+    return {
+        "nome": this.#nome,
+        "email": this.#email,
+        "senha": this.#senha
     }
 }
+
+}
+
+toString()
+    return `Cliente código: ${this.#codigo} -  nome: ${this.#nome}`;
+

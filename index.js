@@ -1,37 +1,18 @@
-class Cliente {
-    constructor(nome, email, senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-    }
+import express from "express";
 
-    gravar() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                console.log("Gravando cliente...");
-                resolve();
-            }, 1000);
-        });
-    }
+import routeCliente from "./Routes/routeCliente.js";
 
-    alterar() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                console.log("Alterando cliente...");
-                resolve();
-            }, 1000);
-        });
-    }
-}
+const host = '0.0.0.0';
+const port = 4020;
 
-var cliente = new Cliente("Victor Nascimento", "victor@example.com", "123456");
+const app = express();
 
-cliente.gravar()
-    .then(() => {
-        console.log("Cliente gravado com sucesso");
-    })
-    .catch((erro) => {
-        console.log("Erro ao gravar o cliente: " + erro);
-    });
+app.use(express.json());
 
-cliente.alterar()  
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/clientes', routeCliente);
+
+app.listen(port, host, () => {
+    console.log(`Servidor backend rodando em http://${host}:${port}`);
+});

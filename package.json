@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/victornascimento08/Backend-Do-Cadastro/issues"
   },
-  "homepage": "https://github.com/victornascimento08/Backend-Do-Cadastro#readme"
+  "homepage": "https://github.com/victornascimento08/Backend-Do-Cadastro#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0"
+  }
 }

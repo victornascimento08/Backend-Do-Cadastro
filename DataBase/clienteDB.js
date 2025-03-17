@@ -54,7 +54,7 @@ export default class ClienteDB {
   async excluir(cliente) {
     if (cliente instanceof Cliente) {
       const conexao = await conectar();
-      const sql = `DELETE FROM cliente WHERE email = ?`; // Usando email como base para exclusão
+      const sql = `DELETE FROM cliente WHERE email = ?`; 
       const parametros = [cliente.email];
       await conexao.execute(sql, parametros);
       await conexao.release();
